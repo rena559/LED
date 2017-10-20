@@ -36,6 +36,7 @@ namespace LED
             }
             catch(Exception exc)
             {
+
                 MessageBox.Show("Something went wrong: \n" + exc.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
