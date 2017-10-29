@@ -30,9 +30,13 @@ namespace LED
             try
             {
                 if ((bool)FadeCheckBox.IsChecked)
+                {
                     m_blink1?.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 255, 0, 0, false);
+                }
                 else
+                {
                     m_blink1?.SetColor(255, 0, 0);
+                }
             }
             catch(Exception exc)
             {
