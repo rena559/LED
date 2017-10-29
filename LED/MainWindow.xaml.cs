@@ -30,13 +30,9 @@ namespace LED
             try
             {
                 if ((bool)FadeCheckBox.IsChecked)
-                {
-                    m_blink1.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 255, 0, 0, false);
-                }
+                    m_blink1?.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 255, 0, 0, false);
                 else
-                {
-                    m_blink1.SetColor(255, 0, 0);
-                }
+                    m_blink1?.SetColor(255, 0, 0);
             }
             catch(Exception exc)
             {
@@ -49,9 +45,9 @@ namespace LED
             try
             {
                 if ((bool)FadeCheckBox.IsChecked)
-                m_blink1.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 0, 255, 0, false);
+                m_blink1?.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 0, 255, 0, false);
             else
-                m_blink1.SetColor(0, 255, 0);
+                m_blink1?.SetColor(0, 255, 0);
             }
             catch (Exception exc)
             {
@@ -64,9 +60,9 @@ namespace LED
             try
             {
                 if ((bool)FadeCheckBox.IsChecked)
-                m_blink1.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 0, 0, 255, false);
+                m_blink1?.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 0, 0, 255, false);
             else
-                m_blink1.SetColor(0, 0, 255);
+                m_blink1?.SetColor(0, 0, 255);
         }
             catch(Exception exc)
             {
@@ -103,7 +99,7 @@ namespace LED
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if(m_blink1 != null && m_blink1.IsConnected)
-                m_blink1.Close();
+                m_blink1?.Close();
         }
 
         private void FadeCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -125,7 +121,7 @@ namespace LED
 
         private void Disconnect_Click(object sender, RoutedEventArgs e)
         {
-            m_blink1.Close();
+            m_blink1?.Close();
             UpdateTitle(false);
             Disconnect.IsEnabled = false;
             Connect.IsEnabled = true;
