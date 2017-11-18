@@ -48,6 +48,7 @@ namespace LED
                 m_blink1?.FadeToColor((Convert.ToUInt16(ComboBox.SelectionBoxItem)), 0, 255, 0, false);
             else
                 m_blink1?.SetColor(0, 255, 0);
+                tesfdklögdf
             }
             catch (Exception exc)
             {
